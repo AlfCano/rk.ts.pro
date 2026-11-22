@@ -1,0 +1,24 @@
+Package: rk.ts.pro
+Type: Package
+Title: Advanced Time Series & Forecasting for RKWard: Prophet (Multiple
+        Seasonality & Holidays), TBATS, Batch & Hierarchical
+        Reconciliation (tsibble/fable), and Backtesting
+        (Cross-Validation).
+Version: 0.0.1
+Date: 2026-11-21
+Author: Alfonso Cano
+Maintainer: Alfonso Cano <alfonso.cano@correo.buap.mx>
+Depends: R (>= 4.1.0)
+Suggests: prophet, forecast, fable, fabletools, tsibble, feasts, dplyr,
+        ggplot2, future
+Enhances: rkward
+Description: Advanced Time Series & Forecasting for RKWard: Prophet
+        (Multiple Seasonality & Holidays), TBATS, Batch & Hierarchical
+        Reconciliation (tsibble/fable), and Backtesting
+        (Cross-Validation).
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyLoad: yes
+URL: https://github.com/AlfCano/rk.ts.pro
+Authors@R: person(given="Alfonso", family="Cano",
+        email="alfonso.cano@correo.buap.mx", role=c("aut", "cre"))

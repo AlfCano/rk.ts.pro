@@ -1,0 +1,110 @@
+<!DOCTYPE rkplugin >
+<document>
+	<!--
+		this code was generated using the rkwarddev package.
+	perhaps don't make changes here, but in the rkwarddev script instead!
+	-->
+	<code file="3.TimeSeriesCrossValidationBacktesting.js" />
+	<help file="3.TimeSeriesCrossValidationBacktesting.rkh" />
+	<!--
+		<dependencies>
+		</dependencies>
+	-->
+	<logic>
+		<convert id="cond_cv_ts" sources="cv_mode.string" mode="equals" standard="ts" />
+		<convert id="cond_cv_df" sources="cv_mode.string" mode="equals" standard="fable" />
+		<connect governor="cond_cv_ts" client="frm_cv_ts.enabled" />
+		<connect governor="cond_cv_df" client="frm_cv_df.enabled" />
+		<script>
+			gui.addChangeCommand("cv_mode.string", "update_cv_root()");
+	    gui.addChangeCommand("cv_df.available", "update_cv_root()");
+	    function update_cv_root() {
+	       var mode = gui.getValue("cv_mode.string");
+	       var df = gui.getValue("cv_df.available");
+	       if (mode === "fable") {
+	          if (df !== "") {
+	             gui.setValue("cv_vs.root", df);
+	          } else {
+	             gui.setValue("cv_vs.root", "");
+	          }
+	       } else {
+	          gui.setValue("cv_vs.root", "");
+	       }
+	    }
+		</script>
+	</logic>
+	<dialog label="3. Time-Series Cross-Validation (Backtesting)">
+		<row id="row_v1DE1DEBEU">
+			<varselector id="cv_vs" />
+			<column id="clm_t1DE1DEBEU">
+				<tabbook>
+					<tab label="1. Data &amp; Engine" id="tab_1DatEngn">
+						<column id="clm_rBEUOCVEHD">
+							<radio id="cv_mode" label="Backtesting Engine">
+								<option label="Univariate ts Object (forecast::tsCV — Error by Horizon h)" value="ts" checked="true" />
+								<option label="Data Frame (tsibble::stretch_tsibble + fable)" value="fable" />
+							</radio>
+							<frame label="Univariate tsCV Input" id="frm_cv_ts">
+								<varslot id="cv_ts" label="Time Series Object (ts)" source="cv_vs" classes="ts" />
+								<spinbox label="Sliding Window Size (0 = Expanding Window)" id="cv_window" min="0" max="500" type="integer" />
+							</frame>
+							<frame label="tsibble / fable Rolling Input" id="frm_cv_df">
+								<varslot id="cv_df" label="Data Frame" source="cv_vs" classes="data.frame" />
+								<varslot id="cv_idx" label="Time Index Column" source="cv_vs" />
+								<dropdown id="cv_gran" label="Time Granularity">
+									<option label="Monthly (yearmonth)" value="month" checked="true" />
+									<option label="Quarterly (yearquarter)" value="quarter" />
+									<option label="Weekly (yearweek)" value="week" />
+									<option label="Daily (as.Date)" value="day" />
+									<option label="Native / Numeric" value="raw" />
+								</dropdown>
+								<varslot id="cv_y" label="Target Variable (Y, Numeric)" source="cv_vs" classes="numeric integer" />
+								<spinbox label="Step Between Rolling Folds (.step)" id="cv_step" initial="3" min="1" max="60" type="integer" />
+							</frame>
+							<stretch />
+						</column>
+					</tab>
+					<tab label="2. Rolling Windows &amp; Models" id="tab_2RllngWM">
+						<column id="clm_fCVHCVHITW">
+							<frame label="Cross-Validation Horizon" id="frm_CrssVldH">
+								<spinbox label="Initial Training Window Size (Minimum observations)" id="cv_init" initial="36" min="6" max="1000" type="integer" />
+								<spinbox label="Forecast Horizon per Fold (h)" id="cv_h" initial="6" min="1" max="60" type="integer" />
+							</frame>
+							<frame label="Candidate Models to Compete" id="frm_CnddtMdC">
+								<checkbox id="cv_mod_arima" label="Auto-ARIMA" value="1" checked="true" />
+								<checkbox id="cv_mod_ets" label="ETS (Exponential Smoothing)" value="1" checked="true" />
+								<checkbox id="cv_mod_snaive" label="Seasonal Naive (Benchmark)" value="1" checked="true" />
+								<checkbox id="cv_mod_extra" label="Additional Model (TBATS for ts / TSLM for fable)" value="1" />
+							</frame>
+							<stretch />
+						</column>
+					</tab>
+					<tab label="3. Plot &amp; Output" id="tab_3PltOtpt">
+						<column id="clm_fPCPCPT2MC">
+							<frame label="Plot Customization" id="frm_PltCstmz">
+								<dropdown id="cv_theme" label="Plot Theme (ggplot2)">
+									<option label="Minimal (Clean business look)" value="minimal" checked="true" />
+									<option label="Classic (Scientific)" value="classic" />
+									<option label="Black &amp; White (Grid)" value="bw" />
+								</dropdown>
+								<input label="Main Title (Leave empty for default)" id="cv_plot_main" />
+							</frame>
+							<frame label="HTML Graphics Size &amp; Resolution" id="frm_HTMLGrSR">
+								<row id="row_sHTMLPW850">
+									<spinbox label="HTML Plot Width (pixels)" id="cv_plot_w" initial="850" min="100" max="5000" type="integer" />
+									<spinbox label="HTML Plot Height (pixels)" id="cv_plot_h" initial="550" min="100" max="5000" type="integer" />
+									<spinbox label="Resolution (DPI)" id="cv_plot_res" initial="120" min="72" max="600" type="integer" />
+								</row>
+							</frame>
+							<frame label="Save Objects to Workspace" id="frm_SvObjctW">
+								<saveobject label="Save Backtesting Accuracy Table as" checkable="true" checked="true" initial="cv_accuracy" id="cv_save_tbl" />
+								<saveobject label="Save Backtesting Plot (ggplot2) as" checkable="true" initial="cv_plot" id="cv_save_plot" />
+							</frame>
+							<stretch />
+						</column>
+					</tab>
+				</tabbook>
+			</column>
+		</row>
+	</dialog>
+</document>

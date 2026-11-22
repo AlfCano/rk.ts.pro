@@ -1,0 +1,93 @@
+<!DOCTYPE rkhelp >
+<document>
+	<!--
+		this code was generated using the rkwarddev package.
+	perhaps don't make changes here, but in the rkwarddev script instead!
+	-->
+	<summary>
+	</summary>
+	<usage>
+	</usage>
+	<!--
+		<section id="sct_EDITORDE" title="EDIT OR DELETE ME">
+			EDIT OR DELETE ME
+		</section>
+	-->
+	<settings>
+		<caption id="tab_1DatEngn" />
+		<setting id="pro_df">
+		</setting>
+		<setting id="pro_y">
+		</setting>
+		<setting id="pro_ds">
+		</setting>
+		<setting id="pro_engine">
+		</setting>
+		<setting id="pro_h">
+		</setting>
+		<caption id="tab_2SsnltyH" />
+		<caption id="frm_prophet" />
+		<setting id="pro_freq">
+		</setting>
+		<setting id="pro_country">
+		</setting>
+		<setting id="pro_growth">
+		</setting>
+		<setting id="pro_cap">
+		</setting>
+		<setting id="pro_seas_mode">
+		</setting>
+		<setting id="pro_cp_scale">
+		</setting>
+		<setting id="pro_yr_seas">
+		</setting>
+		<setting id="pro_wk_seas">
+		</setting>
+		<setting id="pro_dy_seas">
+		</setting>
+		<caption id="frm_tbats" />
+		<setting id="pro_tbats_periods">
+		</setting>
+		<setting id="pro_tbats_start">
+		</setting>
+		<caption id="tab_3PltOptn" />
+		<caption id="frm_PltCstmz" />
+		<setting id="pro_comp_plot">
+		</setting>
+		<setting id="pro_theme">
+		</setting>
+		<setting id="pro_plot_main">
+		</setting>
+		<setting id="pro_plot_xlab">
+		</setting>
+		<setting id="pro_plot_ylab">
+		</setting>
+		<caption id="tab_4Output" />
+		<caption id="frm_SvObjctW" />
+		<setting id="pro_save_fc">
+		</setting>
+		<setting id="pro_save_mod">
+		</setting>
+		<caption id="frm_HTMLGrSR" />
+		<setting id="pro_plot_w">
+		</setting>
+		<setting id="pro_plot_h">
+		</setting>
+		<setting id="pro_plot_res">
+		</setting>
+		<caption id="frm_SvPltObj" />
+		<setting id="pro_save_plot">
+		</setting>
+	</settings>
+	<!--
+		<related>
+			<ul>
+				<li>
+					<link href="rkward://rhelp/..." />
+				</li>
+			</ul>
+		</related>
+	-->
+	<technical>
+	</technical>
+</document>

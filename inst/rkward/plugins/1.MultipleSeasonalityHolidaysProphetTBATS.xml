@@ -1,0 +1,148 @@
+<!DOCTYPE rkplugin >
+<document>
+	<!--
+		this code was generated using the rkwarddev package.
+	perhaps don't make changes here, but in the rkwarddev script instead!
+	-->
+	<code file="1.MultipleSeasonalityHolidaysProphetTBATS.js" />
+	<help file="1.MultipleSeasonalityHolidaysProphetTBATS.rkh" />
+	<!--
+		<dependencies>
+		</dependencies>
+	-->
+	<logic>
+		<connect governor="pro_df.available" client="pro_vs.root" />
+		<convert id="cond_pro_prophet" sources="pro_engine.string" mode="equals" standard="prophet" />
+		<convert id="cond_pro_tbats" sources="pro_engine.string" mode="equals" standard="tbats" />
+		<convert id="cond_pro_log" sources="pro_growth.string" mode="equals" standard="logistic" />
+		<connect governor="cond_pro_prophet" client="pro_ds.enabled" />
+		<connect governor="cond_pro_prophet" client="frm_prophet.enabled" />
+		<connect governor="cond_pro_tbats" client="frm_tbats.enabled" />
+		<connect governor="cond_pro_log" client="pro_cap.enabled" />
+	</logic>
+	<dialog label="1. Multiple Seasonality &amp; Holidays (Prophet / TBATS)">
+		<row id="row_v1DE1DEDFT">
+			<varselector id="pro_vs" />
+			<column id="clm_t1DE1DEDFT">
+				<tabbook>
+					<tab label="1. Data &amp; Engine" id="tab_1DatEngn">
+						<column id="clm_vDFTVYNDDC">
+							<varslot id="pro_df" label="Data Frame" source="pro_vs" classes="data.frame" required="true" />
+							<varslot id="pro_y" label="Target Variable (Y, Numeric)" source="pro_vs" classes="numeric integer" required="true" />
+							<varslot id="pro_ds" label="Date / Datetime Column (Required for Prophet)" source="pro_vs" />
+							<radio id="pro_engine" label="Forecasting Engine">
+								<option label="Prophet (Trends, Multiple Seasonalities &amp; Country Holidays)" value="prophet" checked="true" />
+								<option label="TBATS (Trigonometric Multiple Seasonalities — Pure R)" value="tbats" />
+							</radio>
+							<spinbox label="Forecast Horizon (Periods ahead)" id="pro_h" initial="30" min="1" max="730" type="integer" />
+							<stretch />
+						</column>
+					</tab>
+					<tab label="2. Seasonality &amp; Holidays" id="tab_2SsnltyH">
+						<column id="clm_fPCFSFPDWM">
+							<frame label="Prophet Configuration" id="frm_prophet">
+								<row id="row_dFSFPDWMQY">
+									<dropdown id="pro_freq" label="Future Step Frequency (Prophet)">
+										<option label="Daily (day)" value="day" checked="true" />
+										<option label="Weekly (week)" value="week" />
+										<option label="Monthly (month)" value="month" />
+										<option label="Quarterly (quarter)" value="quarter" />
+										<option label="Yearly (year)" value="year" />
+										<option label="Hourly (hour)" value="hour" />
+									</dropdown>
+									<dropdown id="pro_country" label="Add Built-in Country Holidays">
+										<option label="None" value="none" checked="true" />
+										<option label="Mexico (MX)" value="MX" />
+										<option label="United States (US)" value="US" />
+										<option label="Spain (ES)" value="ES" />
+										<option label="Colombia (CO)" value="CO" />
+										<option label="Argentina (AR)" value="AR" />
+										<option label="Chile (CL)" value="CL" />
+										<option label="Brazil (BR)" value="BR" />
+										<option label="Canada (CA)" value="CA" />
+										<option label="United Kingdom (GB)" value="GB" />
+										<option label="France (FR)" value="FR" />
+										<option label="Germany (DE)" value="DE" />
+									</dropdown>
+								</row>
+								<row id="row_dTGLDLR0FN">
+									<dropdown id="pro_growth" label="Trend Growth">
+										<option label="Linear (Default)" value="linear" checked="true" />
+										<option label="Logistic (Requires saturation cap &gt; 0)" value="logistic" />
+										<option label="Flat (No trend)" value="flat" />
+									</dropdown>
+									<spinbox label="Logistic Saturation Cap (0 = Auto/Unused)" id="pro_cap" min="0" max="1e+09" />
+								</row>
+								<row id="row_dSMAMCF005">
+									<dropdown id="pro_seas_mode" label="Seasonality Mode">
+										<option label="Additive" value="additive" checked="true" />
+										<option label="Multiplicative" value="multiplicative" />
+									</dropdown>
+									<spinbox label="Changepoint Flexibility (prior scale)" id="pro_cp_scale" initial="0.05" min="0.001" max="1" />
+								</row>
+								<row id="row_dYSAETRUET">
+									<dropdown id="pro_yr_seas" label="Yearly Seasonality">
+										<option label="Auto" value="auto" checked="true" />
+										<option label="Enable (TRUE)" value="TRUE" />
+										<option label="Disable (FALSE)" value="FALSE" />
+									</dropdown>
+									<dropdown id="pro_wk_seas" label="Weekly Seasonality">
+										<option label="Auto" value="auto" checked="true" />
+										<option label="Enable (TRUE)" value="TRUE" />
+										<option label="Disable (FALSE)" value="FALSE" />
+									</dropdown>
+									<dropdown id="pro_dy_seas" label="Daily Seasonality">
+										<option label="Auto" value="auto" checked="true" />
+										<option label="Enable (TRUE)" value="TRUE" />
+										<option label="Disable (FALSE)" value="FALSE" />
+									</dropdown>
+								</row>
+							</frame>
+							<frame label="TBATS Multiple Seasonality (msts)" id="frm_tbats">
+								<input label="Seasonal Periods (comma-separated, e.g., 7, 365.25 or 24, 168)" id="pro_tbats_periods" initial="7, 365.25" />
+								<input label="Start Cycle (comma-separated, e.g., 2020, 1)" id="pro_tbats_start" initial="2020, 1" />
+							</frame>
+							<stretch />
+						</column>
+					</tab>
+					<tab label="3. Plot Options" id="tab_3PltOptn">
+						<column id="clm_fPCPCICBPF">
+							<frame label="Plot Customization" id="frm_PltCstmz">
+								<checkbox id="pro_comp_plot" label="Include Component Breakdown Plot in Final Output (Trend/Holidays/Seasonalities)" value="1" checked="true" />
+								<dropdown id="pro_theme" label="Plot Theme (ggplot2)">
+									<option label="Minimal (Clean business look)" value="minimal" checked="true" />
+									<option label="Classic (Scientific)" value="classic" />
+									<option label="Black &amp; White (Grid)" value="bw" />
+								</dropdown>
+								<input label="Main Title (Leave empty for default)" id="pro_plot_main" />
+								<input label="X-Axis Label (Leave empty for default)" id="pro_plot_xlab" />
+								<input label="Y-Axis Label (Leave empty for default)" id="pro_plot_ylab" />
+							</frame>
+							<stretch />
+						</column>
+					</tab>
+					<tab label="4. Output" id="tab_4Output">
+						<column id="clm_fSOWSOWSFR">
+							<frame label="Save Objects to Workspace" id="frm_SvObjctW">
+								<saveobject label="Save Forecast Result as" checkable="true" checked="true" initial="pro_forecast" id="pro_save_fc" />
+								<saveobject label="Save Model Object as" checkable="true" initial="pro_model" id="pro_save_mod" />
+							</frame>
+							<frame label="HTML Graphics Size &amp; Resolution" id="frm_HTMLGrSR">
+								<row id="row_sHTMLPW850">
+									<spinbox label="HTML Plot Width (pixels)" id="pro_plot_w" initial="850" min="100" max="5000" type="integer" />
+									<spinbox label="HTML Plot Height (pixels)" id="pro_plot_h" initial="600" min="100" max="5000" type="integer" />
+									<spinbox label="Resolution (DPI)" id="pro_plot_res" initial="120" min="72" max="600" type="integer" />
+								</row>
+							</frame>
+							<frame label="Save Plot Object" id="frm_SvPltObj">
+								<saveobject label="Save Main Plot (ggplot2) as" checkable="true" initial="pro_plot" id="pro_save_plot" />
+							</frame>
+							<stretch />
+						</column>
+					</tab>
+				</tabbook>
+				<preview label="Preview Multi-Seasonal Forecast" id="prv_PrvwMlSF" />
+			</column>
+		</row>
+	</dialog>
+</document>

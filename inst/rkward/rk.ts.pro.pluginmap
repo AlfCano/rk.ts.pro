@@ -1,0 +1,159 @@
+<!DOCTYPE
+	rkpluginmap
+>
+<document
+	base_prefix=""
+	namespace="1MultipleSeasonalityHolidaysProphetTBATS"
+	id="1MultipleSeasonalityHolidaysProphetTBATS_rkward"
+	po_id="1MultipleSeasonalityHolidaysProphetTBATS_rkward"
+	priority="medium"
+>
+	<!--
+		this code was generated using the rkwarddev package.
+	perhaps don't make changes here, but in the rkwarddev script instead!
+	-->
+	<dependencies
+		R_min_version="4.1.0"
+	>
+		<package
+			name="prophet"
+		/>
+		<package
+			name="forecast"
+		/>
+		<package
+			name="fable"
+		/>
+		<package
+			name="fabletools"
+		/>
+		<package
+			name="tsibble"
+		/>
+		<package
+			name="feasts"
+		/>
+		<package
+			name="dplyr"
+		/>
+		<package
+			name="ggplot2"
+		/>
+		<package
+			name="future"
+		/>
+	</dependencies>
+	<about
+		name="rk.ts.pro"
+		shortinfo="Advanced Time Series &amp; Forecasting for RKWard: Prophet (Multiple Seasonality &amp; Holidays), TBATS, Batch &amp; Hierarchical Reconciliation (tsibble/fable), and Backtesting (Cross-Validation)."
+		longinfo="Advanced Time Series &amp; Forecasting for RKWard: Prophet (Multiple Seasonality &amp; Holidays), TBATS, Batch &amp; Hierarchical Reconciliation (tsibble/fable), and Backtesting (Cross-Validation)."
+		version="0.0.1"
+		releasedate="2026-11-21"
+		url="https://github.com/AlfCano/rk.ts.pro"
+		license="GPL (&gt;= 3)"
+	>
+		<author
+			given="Alfonso"
+			family="Cano"
+			email="alfonso.cano@correo.buap.mx"
+			role="aut, cre"
+		/>
+	</about>
+	<require
+		map="rkward::menu"
+	/>
+	<require
+		map="rkward::embedded"
+	/>
+	<components>
+		<component
+			id="cmp_1MltplSsnltyHldPTBATS2BHF"
+			label="2. Batch &amp; Hierarchical Forecasting (fable)"
+			type="standard"
+			file="plugins/2.BatchHierarchicalForecastingfable.xml"
+		>
+		</component>
+		<component
+			id="cmp_1MltplSsnltyHPTBATS3TSCVB"
+			label="3. Time-Series Cross-Validation (Backtesting)"
+			type="standard"
+			file="plugins/3.TimeSeriesCrossValidationBacktesting.xml"
+		>
+		</component>
+		<component
+			id="cmp_1MltplSsHPTBATS1MSHPTBATS"
+			label="1. Multiple Seasonality &amp; Holidays (Prophet / TBATS)"
+			type="standard"
+			file="plugins/1.MultipleSeasonalityHolidaysProphetTBATS.xml"
+		>
+		</component>
+	</components>
+	<hierarchy>
+		<menu
+			id="analysis"
+			label="Analysis"
+		>
+			<menu
+				id="time_series"
+				label="time_series"
+			>
+				<menu
+					id="AdvancedHierarchicalPro"
+					label="Advanced &amp; Hierarchical (Pro)"
+				>
+					<entry
+						component="cmp_1MltplSsnltyHldPTBATS2BHF"
+					/>
+				</menu>
+			</menu>
+		</menu>
+		<menu
+			id="analysis"
+			label="Analysis"
+		>
+			<menu
+				id="time_series"
+				label="time_series"
+			>
+				<menu
+					id="AdvancedHierarchicalPro"
+					label="Advanced &amp; Hierarchical (Pro)"
+				>
+					<entry
+						component="cmp_1MltplSsnltyHPTBATS3TSCVB"
+					/>
+				</menu>
+			</menu>
+		</menu>
+		<menu
+			id="analysis"
+			label="Analysis"
+		>
+			<menu
+				id="time_series"
+				label="time_series"
+			>
+				<menu
+					id="AdvancedHierarchicalPro"
+					label="Advanced &amp; Hierarchical (Pro)"
+				>
+					<entry
+						component="cmp_1MltplSsHPTBATS1MSHPTBATS"
+					/>
+				</menu>
+			</menu>
+		</menu>
+	</hierarchy>
+	<!--
+		<context
+			id="x11"
+		>
+		</context>
+	-->
+	<!--
+		<context
+			id="import"
+		>
+		</context>
+	-->
+</document>

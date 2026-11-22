@@ -1,0 +1,81 @@
+<!DOCTYPE rkhelp >
+<document>
+	<!--
+		this code was generated using the rkwarddev package.
+	perhaps don't make changes here, but in the rkwarddev script instead!
+	-->
+	<summary>
+	</summary>
+	<usage>
+	</usage>
+	<!--
+		<section id="sct_EDITORDE" title="EDIT OR DELETE ME">
+			EDIT OR DELETE ME
+		</section>
+	-->
+	<settings>
+		<caption id="tab_1DatEngn" />
+		<setting id="cv_mode">
+		</setting>
+		<caption id="frm_cv_ts" />
+		<setting id="cv_ts">
+		</setting>
+		<setting id="cv_window">
+		</setting>
+		<caption id="frm_cv_df" />
+		<setting id="cv_df">
+		</setting>
+		<setting id="cv_idx">
+		</setting>
+		<setting id="cv_gran">
+		</setting>
+		<setting id="cv_y">
+		</setting>
+		<setting id="cv_step">
+		</setting>
+		<caption id="tab_2RllngWM" />
+		<caption id="frm_CrssVldH" />
+		<setting id="cv_init">
+		</setting>
+		<setting id="cv_h">
+		</setting>
+		<caption id="frm_CnddtMdC" />
+		<setting id="cv_mod_arima">
+		</setting>
+		<setting id="cv_mod_ets">
+		</setting>
+		<setting id="cv_mod_snaive">
+		</setting>
+		<setting id="cv_mod_extra">
+		</setting>
+		<caption id="tab_3PltOtpt" />
+		<caption id="frm_PltCstmz" />
+		<setting id="cv_theme">
+		</setting>
+		<setting id="cv_plot_main">
+		</setting>
+		<caption id="frm_HTMLGrSR" />
+		<setting id="cv_plot_w">
+		</setting>
+		<setting id="cv_plot_h">
+		</setting>
+		<setting id="cv_plot_res">
+		</setting>
+		<caption id="frm_SvObjctW" />
+		<setting id="cv_save_tbl">
+		</setting>
+		<setting id="cv_save_plot">
+		</setting>
+	</settings>
+	<!--
+		<related>
+			<ul>
+				<li>
+					<link href="rkward://rhelp/..." />
+				</li>
+			</ul>
+		</related>
+	-->
+	<technical>
+	</technical>
+</document>

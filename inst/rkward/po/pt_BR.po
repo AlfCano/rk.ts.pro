@@ -1,0 +1,413 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: rk.ts.pro 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-21 19:00+0000\n"
+"PO-Revision-Date: 2026-11-21 19:00+0000\n"
+"Last-Translator: Alfonso Cano <alfonso.cano@correo.buap.mx>\n"
+"Language-Team: Portuguese (Brazil)\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# ================= MENÚS Y PESTAÑAS =================
+msgid "Advanced & Hierarchical (Pro)"
+msgstr "Avançado e Hierárquico (Pro)"
+
+msgid "1. Multiple Seasonality & Holidays (Prophet / TBATS)"
+msgstr "1. Sazonalidade Múltipla e Feriados (Prophet / TBATS)"
+
+msgid "2. Batch & Hierarchical Forecasting (fable)"
+msgstr "2. Previsão em Lote e Hierárquica (fable)"
+
+msgid "3. Time-Series Cross-Validation (Backtesting)"
+msgstr "3. Validação Cruzada Temporal (Backtesting)"
+
+msgid "1. Data & Engine"
+msgstr "1. Dados e Motor"
+
+msgid "2. Seasonality & Holidays"
+msgstr "2. Sazonalidade e Feriados"
+
+msgid "3. Plot Options"
+msgstr "3. Opções de Gráfico"
+
+msgid "4. Output"
+msgstr "4. Saída"
+
+msgid "1. Data & Keys"
+msgstr "1. Dados e Chaves"
+
+msgid "2. Hierarchy & Model"
+msgstr "2. Hierarquia e Modelo"
+
+msgid "2. Rolling Windows & Models"
+msgstr "2. Janelas Móveis e Modelos"
+
+msgid "3. Plot & Output"
+msgstr "3. Gráfico e Saída"
+
+# ================= MÓDULO 1 =================
+msgid "Date / Datetime Column (Required for Prophet)"
+msgstr "Coluna de Data / Hora (Obrigatória para Prophet)"
+
+msgid "Forecasting Engine"
+msgstr "Motor de Previsão"
+
+msgid "Prophet (Trends, Multiple Seasonalities & Country Holidays)"
+msgstr "Prophet (Tendências, Sazonalidades Múltiplas e Feriados)"
+
+msgid "TBATS (Trigonometric Multiple Seasonalities — Pure R)"
+msgstr "TBATS (Sazonalidades Múltiplas Trigonométricas — R Puro)"
+
+msgid "Forecast Horizon (Periods ahead)"
+msgstr "Horizonte de Previsão (Períodos à frente)"
+
+msgid "Future Step Frequency (Prophet)"
+msgstr "Frequência de Passos Futuros (Prophet)"
+
+msgid "Daily (day)"
+msgstr "Diária (day)"
+
+msgid "Weekly (week)"
+msgstr "Semanal (week)"
+
+msgid "Monthly (month)"
+msgstr "Mensal (month)"
+
+msgid "Quarterly (quarter)"
+msgstr "Trimestral (quarter)"
+
+msgid "Yearly (year)"
+msgstr "Anual (year)"
+
+msgid "Hourly (hour)"
+msgstr "Por Hora (hour)"
+
+msgid "Trend Growth"
+msgstr "Crescimento da Tendência"
+
+msgid "Linear (Default)"
+msgstr "Linear (Padrão)"
+
+msgid "Logistic (Requires saturation cap > 0)"
+msgstr "Logístico (Requer teto de saturação > 0)"
+
+msgid "Flat (No trend)"
+msgstr "Plano (Sem tendência)"
+
+msgid "Logistic Saturation Cap (0 = Auto/Unused)"
+msgstr "Teto de Saturação Logística (0 = Auto/Não usado)"
+
+msgid "Seasonality Mode"
+msgstr "Modo de Sazonalidade"
+
+msgid "Additive"
+msgstr "Aditiva"
+
+msgid "Multiplicative"
+msgstr "Multiplicativa"
+
+msgid "Add Built-in Country Holidays"
+msgstr "Adicionar Feriados Nacionais"
+
+msgid "None"
+msgstr "Nenhum"
+
+msgid "Mexico (MX)"
+msgstr "México (MX)"
+
+msgid "United States (US)"
+msgstr "Estados Unidos (US)"
+
+msgid "Spain (ES)"
+msgstr "Espanha (ES)"
+
+msgid "Colombia (CO)"
+msgstr "Colômbia (CO)"
+
+msgid "Argentina (AR)"
+msgstr "Argentina (AR)"
+
+msgid "Chile (CL)"
+msgstr "Chile (CL)"
+
+msgid "Brazil (BR)"
+msgstr "Brasil (BR)"
+
+msgid "Canada (CA)"
+msgstr "Canadá (CA)"
+
+msgid "United Kingdom (GB)"
+msgstr "Reino Unido (GB)"
+
+msgid "France (FR)"
+msgstr "França (FR)"
+
+msgid "Germany (DE)"
+msgstr "Alemanha (DE)"
+
+msgid "Yearly Seasonality"
+msgstr "Sazonalidade Anual"
+
+msgid "Weekly Seasonality"
+msgstr "Sazonalidade Semanal"
+
+msgid "Daily Seasonality"
+msgstr "Sazonalidade Diária"
+
+msgid "Auto"
+msgstr "Automático"
+
+msgid "Enable (TRUE)"
+msgstr "Ativar (TRUE)"
+
+msgid "Disable (FALSE)"
+msgstr "Desativar (FALSE)"
+
+msgid "Changepoint Flexibility (prior scale)"
+msgstr "Flexibilidade de Pontos de Mudança (prior scale)"
+
+msgid "Prophet Configuration"
+msgstr "Configuração do Prophet"
+
+msgid "Seasonal Periods (comma-separated, e.g., 7, 365.25 or 24, 168)"
+msgstr "Períodos Sazonais (separados por vírgula, ex. 7, 365.25 ou 24, 168)"
+
+msgid "Start Cycle (comma-separated, e.g., 2020, 1)"
+msgstr "Ciclo Inicial (separado por vírgula, ex. 2020, 1)"
+
+msgid "TBATS Multiple Seasonality (msts)"
+msgstr "Sazonalidade Múltipla TBATS (msts)"
+
+msgid "Include Component Breakdown Plot in Final Output (Trend/Holidays/Seasonalities)"
+msgstr "Incluir Gráfico de Decomposição na Saída Final (Tendência/Feriados/Ciclos)"
+
+msgid "Save Forecast Result as"
+msgstr "Salvar Resultado da Previsão como"
+
+msgid "Save Model Object as"
+msgstr "Salvar Objeto do Modelo como"
+
+msgid "Save Main Plot (ggplot2) as"
+msgstr "Salvar Gráfico Principal (ggplot2) como"
+
+msgid "Preview Multi-Seasonal Forecast"
+msgstr "Pré-visualizar Previsão Multi-Sazonal"
+
+# ================= MÓDULO 2 =================
+msgid "Time Index Column (Date / Year-Month / Numeric)"
+msgstr "Coluna de Índice Temporal (Data / Ano-Mês / Numérico)"
+
+msgid "Series Key(s) / Hierarchy Levels (e.g., Region, Store)"
+msgstr "Chave(s) da Série / Níveis Hierárquicos (ex. Região, Loja)"
+
+msgid "Time Index Granularity"
+msgstr "Granularidade do Índice Temporal"
+
+msgid "Monthly (Convert Date -> yearmonth)"
+msgstr "Mensal (Converter Data -> yearmonth)"
+
+msgid "Quarterly (Convert Date -> yearquarter)"
+msgstr "Trimestral (Converter Data -> yearquarter)"
+
+msgid "Weekly (Convert Date -> yearweek)"
+msgstr "Semanal (Converter Data -> yearweek)"
+
+msgid "Daily (Convert -> as.Date)"
+msgstr "Diária (Converter -> as.Date)"
+
+msgid "Native / Numeric (Keep index as-is)"
+msgstr "Nativo / Numérico (Manter índice como está)"
+
+msgid "Multi-Series / Hierarchy Mode"
+msgstr "Modo Multissérie / Hierarquia"
+
+msgid "Independent Batch Forecasting (Each key series separately)"
+msgstr "Previsão em Lote Independente (Cada série separadamente)"
+
+msgid "Nested Hierarchy (Key1 / Key2 / ... e.g., Region / Store)"
+msgstr "Hierarquia Aninhada (Chave1 / Chave2 / ... ex. Região / Loja)"
+
+msgid "Crossed / Grouped Hierarchy (Key1 * Key2 * ...)"
+msgstr "Hierarquia Cruzada / Agrupada (Chave1 * Chave2 * ...)"
+
+msgid "Hierarchical Reconciliation Method"
+msgstr "Método de Reconciliação Hierárquica"
+
+msgid "MinT Shrinkage (Optimal — mint_shrink)"
+msgstr "MinT Shrinkage (Ótimo — mint_shrink)"
+
+msgid "MinT OLS (ols)"
+msgstr "MinT OLS (Mínimos Quadrados)"
+
+msgid "Bottom-Up (Sum lower levels)"
+msgstr "Bottom-Up (Somar níveis inferiores)"
+
+msgid "Top-Down (Historical proportions)"
+msgstr "Top-Down (Proporções históricas)"
+
+msgid "Batch & Reconciliation Structure"
+msgstr "Estrutura em Lote e Reconciliação"
+
+msgid "Fable Model Engine"
+msgstr "Motor de Modelos Fable"
+
+msgid "ETS (Exponential Smoothing)"
+msgstr "ETS (Suavização Exponencial)"
+
+msgid "Auto-ARIMA"
+msgstr "Auto-ARIMA"
+
+msgid "Compare Both (ETS + ARIMA)"
+msgstr "Comparar Ambos (ETS + ARIMA)"
+
+msgid "TSLM (Trend + Seasonality Linear Model)"
+msgstr "TSLM (Modelo Linear de Tendência + Sazonalidade)"
+
+msgid "SNAIVE (Seasonal Naive Baseline)"
+msgstr "SNAIVE (Referência Naive Sazonal)"
+
+msgid "Forecast Horizon (Periods)"
+msgstr "Horizonte de Previsão (Períodos)"
+
+msgid "Enable Parallel Processing (future::multisession)"
+msgstr "Ativar Processamento Paralelo (future::multisession)"
+
+msgid "Modeling & Compute Options"
+msgstr "Opções de Modelagem e Computação"
+
+msgid "Max Series to Plot (Prevents cluttered facets)"
+msgstr "Máximo de Séries no Gráfico (Evita facetas poluídas)"
+
+msgid "Save Fable Forecast (fbl_ts) as"
+msgstr "Salvar Previsão Fable (fbl_ts) como"
+
+msgid "Save Mable Models (mdl_df) as"
+msgstr "Salvar Modelos Mable (mdl_df) como"
+
+msgid "Preview Batch / Hierarchical Plot"
+msgstr "Pré-visualizar Gráfico em Lote / Hierárquico"
+
+# ================= MÓDULO 3 =================
+msgid "Backtesting Engine"
+msgstr "Motor de Backtesting"
+
+msgid "Univariate ts Object (forecast::tsCV — Error by Horizon h)"
+msgstr "Objeto ts Univariado (forecast::tsCV — Erro por Horizonte h)"
+
+msgid "Data Frame (tsibble::stretch_tsibble + fable)"
+msgstr "Data Frame (tsibble::stretch_tsibble + fable)"
+
+msgid "Time Series Object (ts)"
+msgstr "Objeto de Série Temporal (ts)"
+
+msgid "Sliding Window Size (0 = Expanding Window)"
+msgstr "Tamanho da Janela Deslizante (0 = Janela Expansiva)"
+
+msgid "Univariate tsCV Input"
+msgstr "Entrada Univariada tsCV"
+
+msgid "Time Index Column"
+msgstr "Coluna de Índice Temporal"
+
+msgid "Time Granularity"
+msgstr "Granularidade Temporal"
+
+msgid "Monthly (yearmonth)"
+msgstr "Mensal (yearmonth)"
+
+msgid "Quarterly (yearquarter)"
+msgstr "Trimestral (yearquarter)"
+
+msgid "Weekly (yearweek)"
+msgstr "Semanal (yearweek)"
+
+msgid "Daily (as.Date)"
+msgstr "Diária (as.Date)"
+
+msgid "Native / Numeric"
+msgstr "Nativo / Numérico"
+
+msgid "Step Between Rolling Folds (.step)"
+msgstr "Passo entre Dobras Móveis (.step)"
+
+msgid "tsibble / fable Rolling Input"
+msgstr "Entrada Móvel tsibble / fable"
+
+msgid "Initial Training Window Size (Minimum observations)"
+msgstr "Tamanho Inicial de Treinamento (Mín. observações)"
+
+msgid "Forecast Horizon per Fold (h)"
+msgstr "Horizonte de Previsão por Dobra (h)"
+
+msgid "Cross-Validation Horizon"
+msgstr "Horizonte de Validação Cruzada"
+
+msgid "Seasonal Naive (Benchmark)"
+msgstr "Naive Sazonal (Referência)"
+
+msgid "Additional Model (TBATS for ts / TSLM for fable)"
+msgstr "Modelo Adicional (TBATS para ts / TSLM para fable)"
+
+msgid "Candidate Models to Compete"
+msgstr "Modelos Candidatos a Competir"
+
+msgid "Save Backtesting Accuracy Table as"
+msgstr "Salvar Tabela de Acurácia Backtesting como"
+
+msgid "Save Backtesting Plot (ggplot2) as"
+msgstr "Salvar Gráfico Backtesting (ggplot2) como"
+
+# ================= COMPARTIDOS =================
+msgid "Data Frame"
+msgstr "Tabela de Dados (data.frame)"
+
+msgid "Target Variable (Y, Numeric)"
+msgstr "Variável Alvo (Y, Numérica)"
+
+msgid "Plot Theme (ggplot2)"
+msgstr "Tema do Gráfico (ggplot2)"
+
+msgid "Minimal (Clean business look)"
+msgstr "Minimalista (Visual executivo limpo)"
+
+msgid "Classic (Scientific)"
+msgstr "Clássico (Científico)"
+
+msgid "Black & White (Grid)"
+msgstr "Preto e Branco (Grade)"
+
+msgid "Main Title (Leave empty for default)"
+msgstr "Título Principal (Deixe vazio para o padrão)"
+
+msgid "X-Axis Label (Leave empty for default)"
+msgstr "Rótulo do Eixo X (Deixe vazio para o padrão)"
+
+msgid "Y-Axis Label (Leave empty for default)"
+msgstr "Rótulo do Eixo Y (Deixe vazio para o padrão)"
+
+msgid "Plot Customization"
+msgstr "Personalização do Gráfico"
+
+msgid "Save Objects to Workspace"
+msgstr "Salvar Objetos no Workspace"
+
+msgid "HTML Plot Width (pixels)"
+msgstr "Largura do Gráfico HTML (pixels)"
+
+msgid "HTML Plot Height (pixels)"
+msgstr "Altura do Gráfico HTML (pixels)"
+
+msgid "Resolution (DPI)"
+msgstr "Resolução (DPI)"
+
+msgid "HTML Graphics Size & Resolution"
+msgstr "Tamanho e Resolução de Gráficos HTML"
+
+msgid "Save Plot (ggplot2) as"
+msgstr "Salvar Gráfico (ggplot2) como"
+
+msgid "Save Plot Object"
+msgstr "Salvar Objeto Gráfico"

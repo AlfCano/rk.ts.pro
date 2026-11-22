@@ -1,0 +1,106 @@
+<!DOCTYPE rkplugin >
+<document>
+	<!--
+		this code was generated using the rkwarddev package.
+	perhaps don't make changes here, but in the rkwarddev script instead!
+	-->
+	<code file="2.BatchHierarchicalForecastingfable.js" />
+	<help file="2.BatchHierarchicalForecastingfable.rkh" />
+	<!--
+		<dependencies>
+		</dependencies>
+	-->
+	<logic>
+		<connect governor="fab_df.available" client="fab_vs.root" />
+		<convert id="cond_fab_batch" sources="fab_hier_mode.string" mode="equals" standard="batch" />
+		<connect governor="cond_fab_batch.not" client="fab_reconcile.enabled" />
+	</logic>
+	<dialog label="2. Batch &amp; Hierarchical Forecasting (fable)">
+		<row id="row_v1DK1DKDFT">
+			<varselector id="fab_vs" />
+			<column id="clm_t1DK1DKDFT">
+				<tabbook>
+					<tab label="1. Data &amp; Keys" id="tab_1DataKys">
+						<column id="clm_vDFTICDYMN">
+							<varslot id="fab_df" label="Data Frame" source="fab_vs" classes="data.frame" required="true" />
+							<varslot id="fab_idx" label="Time Index Column (Date / Year-Month / Numeric)" source="fab_vs" required="true" />
+							<dropdown id="fab_gran" label="Time Index Granularity">
+								<option label="Monthly (Convert Date -&gt; yearmonth)" value="month" checked="true" />
+								<option label="Quarterly (Convert Date -&gt; yearquarter)" value="quarter" />
+								<option label="Weekly (Convert Date -&gt; yearweek)" value="week" />
+								<option label="Daily (Convert -&gt; as.Date)" value="day" />
+								<option label="Native / Numeric (Keep index as-is)" value="raw" />
+							</dropdown>
+							<varslot id="fab_y" label="Target Variable (Y, Numeric)" source="fab_vs" classes="numeric integer" required="true" />
+							<varslot id="fab_keys" label="Series Key(s) / Hierarchy Levels (e.g., Region, Store)" source="fab_vs" multi="true" />
+							<stretch />
+						</column>
+					</tab>
+					<tab label="2. Hierarchy &amp; Model" id="tab_2HrrchyM">
+						<column id="clm_fBRSBRSMSH">
+							<frame label="Batch &amp; Reconciliation Structure" id="frm_BtchRcnS">
+								<radio id="fab_hier_mode" label="Multi-Series / Hierarchy Mode">
+									<option label="Independent Batch Forecasting (Each key series separately)" value="batch" checked="true" />
+									<option label="Nested Hierarchy (Key1 / Key2 / ... e.g., Region / Store)" value="nested" />
+									<option label="Crossed / Grouped Hierarchy (Key1 * Key2 * ...)" value="crossed" />
+								</radio>
+								<dropdown id="fab_reconcile" label="Hierarchical Reconciliation Method">
+									<option label="MinT Shrinkage (Optimal — mint_shrink)" value="mint_shrink" checked="true" />
+									<option label="MinT OLS (ols)" value="ols" />
+									<option label="Bottom-Up (Sum lower levels)" value="bottom_up" />
+									<option label="Top-Down (Historical proportions)" value="top_down" />
+								</dropdown>
+							</frame>
+							<frame label="Modeling &amp; Compute Options" id="frm_MdlngCmO">
+								<dropdown id="fab_model" label="Fable Model Engine">
+									<option label="ETS (Exponential Smoothing)" value="ets" checked="true" />
+									<option label="Auto-ARIMA" value="arima" />
+									<option label="Compare Both (ETS + ARIMA)" value="both" />
+									<option label="TSLM (Trend + Seasonality Linear Model)" value="tslm" />
+									<option label="SNAIVE (Seasonal Naive Baseline)" value="snaive" />
+								</dropdown>
+								<spinbox label="Forecast Horizon (Periods)" id="fab_h" initial="12" min="1" max="120" type="integer" />
+								<checkbox id="fab_parallel" label="Enable Parallel Processing (future::multisession)" value="1" />
+							</frame>
+							<stretch />
+						</column>
+					</tab>
+					<tab label="3. Plot Options" id="tab_3PltOptn">
+						<column id="clm_fPCPCPT2MC">
+							<frame label="Plot Customization" id="frm_PltCstmz">
+								<dropdown id="fab_theme" label="Plot Theme (ggplot2)">
+									<option label="Minimal (Clean business look)" value="minimal" checked="true" />
+									<option label="Classic (Scientific)" value="classic" />
+									<option label="Black &amp; White (Grid)" value="bw" />
+								</dropdown>
+								<input label="Main Title (Leave empty for default)" id="fab_plot_main" />
+								<spinbox label="Max Series to Plot (Prevents cluttered facets)" id="fab_max_plot" initial="6" min="1" max="20" type="integer" />
+							</frame>
+							<stretch />
+						</column>
+					</tab>
+					<tab label="4. Output" id="tab_4Output">
+						<column id="clm_fSOWSOWSFF">
+							<frame label="Save Objects to Workspace" id="frm_SvObjctW">
+								<saveobject label="Save Fable Forecast (fbl_ts) as" checkable="true" checked="true" initial="fable_forecast" id="fab_save_fc" />
+								<saveobject label="Save Mable Models (mdl_df) as" checkable="true" initial="fable_models" id="fab_save_mod" />
+							</frame>
+							<frame label="HTML Graphics Size &amp; Resolution" id="frm_HTMLGrSR">
+								<row id="row_sHTMLPW900">
+									<spinbox label="HTML Plot Width (pixels)" id="fab_plot_w" initial="900" min="100" max="5000" type="integer" />
+									<spinbox label="HTML Plot Height (pixels)" id="fab_plot_h" initial="650" min="100" max="5000" type="integer" />
+									<spinbox label="Resolution (DPI)" id="fab_plot_res" initial="120" min="72" max="600" type="integer" />
+								</row>
+							</frame>
+							<frame label="Save Plot Object" id="frm_SvPltObj">
+								<saveobject label="Save Plot (ggplot2) as" checkable="true" initial="fable_plot" id="fab_save_plot" />
+							</frame>
+							<stretch />
+						</column>
+					</tab>
+				</tabbook>
+				<preview label="Preview Batch / Hierarchical Plot" id="prv_PrvwBtHP" />
+			</column>
+		</row>
+	</dialog>
+</document>
